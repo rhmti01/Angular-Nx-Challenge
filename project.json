@@ -21,7 +21,10 @@
           {
             "glob": "**/*",
             "input": "public"
-          }
+          },
+          "src/favicon.ico",
+          "src/assets",
+          "src/app/assets"
         ],
         "styles": ["./src/styles.scss"],
         "scripts": []
