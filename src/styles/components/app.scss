@@ -3,7 +3,7 @@
 @import '../base/_mixins';
 
 .dashboard {
-    background-color: rgba(255, 0, 0, 0);
+    background-color: rgba(56, 31, 198, 0);
     height: auto;
     width: 100vw;
     display: grid;
@@ -47,12 +47,13 @@
 }
 
 .profile-title h2 {
+    margin-top: 1px;
     @include textStyle(20px, 300, white);
 }
 
 .date-render {
     display: flex;
-    margin-top: 5px;
+    margin-top: 4px;
 
     ul {
         height: 65px;
@@ -64,15 +65,19 @@
 }
 
 .date-render ul li {
-    @include textStyle(17px, 400, $neutral-lightBlue);
-    // @include textStyle(16px , 300 , white);
+    @include textStyle(16px, 400, $neutral-lightBlue);
+    cursor: pointer;
+}
+
+.date-render ul li:hover{
+    @include textStyle(16px , 400 , white);
 }
 
 .stats {
     margin: 0 auto 4rem auto;
     width: calc(100% - 45px);
     max-width: 400px;
-    background-color: #7b84d800;
+    background-color: #38ce1a00;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(6, 1fr);
@@ -83,6 +88,7 @@
 
 .card {
     @include borderRadius(14px);
+    height: 160px;
     position: relative;
     overflow: hidden;
 }
@@ -123,17 +129,22 @@
     flex-direction: column;
     justify-content: center;
     height: 120px;
-    width: 100%;
-    padding:  40px 30px ;
+    width: 101%;
+    padding: 40px 30px;
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    border-radius: 20px 20px 0 0;
-    -webkit-border-radius: 20px 20px 0 0;
-    -moz-border-radius: 20px 20px 0 0;
-    -ms-border-radius: 20px 20px 0 0;
-    -o-border-radius: 20px 20px 0 0;
+    bottom: -0.5px;
+    left: -0.5px;
+    right: -0.5px;
+    border-radius: 18px 18px 2px 2px;
+    -webkit-border-radius: 18px 18px 2px 2px;
+    -moz-border-radius: 18px 18px 2px 2px;
+    -ms-border-radius: 18px 18px 2px 2px;
+    -o-border-radius: 18px 18px 2px 2px;
+}
+
+.card-body:hover{
+    background-color: $hover-cardBody;
+    cursor: pointer;
 }
 
 .card-title {
@@ -162,9 +173,355 @@
 
 .card-details p {
     margin-bottom: 8px;
-    @include textStyle(14px,400,$neutral-lightBlue)
+    @include textStyle(14px, 400, $neutral-lightBlue)
+}
+
+
+.card-details p span{
+    display: none;
 }
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+// @media (min-width:450px)
+@include media(T) {
+
+    .dashboard {
+        gap: 23px;
+    }
+
+    .profile-card {
+        max-width: 600px;
+        height: 220px;
+    }
+
+    .profile {
+        gap: 0 20px;
+        padding: 1.8rem 0 1.8rem 20%;
+    }
+
+    .profile-photo {
+        width: 85px;
+    }
+
+    .profile-title h2 {
+        margin-top: 2.5px;
+        @include textStyle(23px, 300, white);
+    }
+
+    .profile-title p {
+        @include textStyle (17px, 300, white)
+    }
+
+    .date-render {
+        margin-top: 3px;
+
+        ul {
+            height: 80px;
+        }
+    }
+
+    .date-render ul li {
+        @include textStyle(17px, 400, $neutral-lightBlue);
+    }
+
+    .stats {
+        margin: 0 auto 4rem auto;
+        width: calc(100% - 45px);
+        max-width: 600px;
+        gap: 22px;
+    }
+
+    .card {
+        height: 180px;
+    }
+
+    .card-icon {
+        top: -3px;
+        right: 22px;
+    }
+
+    .card-body {
+        height: 135px;
+        padding: 30px 40px;
+    }
+
+    .card-title h3 {
+        @include textStyle(19px, 400, white);
+    }
+
+    .card-details h4 {
+        @include textStyle(33px, 300, white);
+    }
+
+    .card-details h4 span {
+        @include textStyle(19px, 300, rgba(255, 255, 255, 0.894));
+    }
+
+    .card-details p {
+        @include textStyle(15px, 400, $neutral-lightBlue)
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+// @media (min-width:800px) and (max-width:1100px)
+@include media(I) {
+
+    .dashboard {
+        gap: 29px;
+    }
+
+
+    .profile-card {
+        max-width: 500px;
+        height: 200px;
+    }
+
+    .profile {
+        gap: 0 20px;
+        padding: 1.6rem 0 1.6rem 20%;
+    }
+
+    .profile-photo {
+        width: 80px;
+    }
+
+    .profile-title h2 {
+        margin-top: 1.5px;
+        @include textStyle(23px, 300, white);
+    }
+
+    .profile-title p {
+        @include textStyle (17px, 300, white)
+    }
+
+    .date-render {
+        margin-top: -4px;
+
+        ul {
+            height: 80px;
+        }
+    }
+
+    .date-render ul li {
+        @include textStyle(17px, 400, $neutral-lightBlue);
+    }
+
+    .stats {
+        margin: 0 auto 4rem auto;
+        width: calc(100% - 70px);
+        max-width: 970px;
+        gap: 22px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    .card {
+        height: 180px;
+    }
+
+    .card-icon {
+        top: -3px;
+        right: 22px;
+    }
+
+    .card-body {
+        height: 135px;
+        padding: 30px 40px;
+    }
+
+    .card-title h3 {
+        @include textStyle(19px, 400, white);
+    }
+
+    .card-details h4 {
+        @include textStyle(33px, 300, white);
+    }
+
+    .card-details h4 span {
+        @include textStyle(19px, 300, rgba(255, 255, 255, 0.894));
+    }
+
+    .card-details p {
+        @include textStyle(15px, 400, $neutral-lightBlue)
+    }
+}
+
+
+
+
+
+
+
+
+
+
+// @media (min-width:1100px)
+@include media(D) {
+
+    .dashboard {
+        background-color: rgba(56, 31, 198, 0);
+        height: 510px;
+        max-width: 1100px;
+        width: 100%;
+        grid-template-columns: repeat(4, 250px);
+        grid-template-rows: repeat(1, 1fr);
+        gap: 30px;
+        margin-right: 30px;
+    }
+
+    .profile-card{
+        height: 515px;
+        width: 250px;
+        margin: 0;
+    }
+
+    .profile {
+        @include borderRadius(1.1rem);
+        background-color: $primary-blue;
+        display: flex;
+        justify-content: start;
+        flex-direction: column;
+        align-items: start;
+        gap: 20px 0;
+        padding: 0 0 0 12%;
+        height: 360px;
+        width: 100%;
+    }
+
+    
+    .card{
+        height: 100%;
+        width: 100%;
+    }
+    
+    .profile-photo {
+        margin-top: 35px;
+        width: 80px;
+    }
+    
+    .profile-title h2 {
+        margin-top: 17px;
+        line-height: 45px;
+        @include textStyle(39px, 300, white);
+    }
+    
+    .profile-title p {
+        @include textStyle (15px, 300, white)
+    }
+    
+    .date-render {
+        margin-top: 4px;
+        
+        ul {
+            padding: 10px 34px;
+            height: 80px;
+            align-items: start;
+            flex-direction: column;
+        }
+    }
+    
+    .date-render ul li {
+        margin-top: 12px;
+        @include textStyle(17px, 400, $neutral-lightBlue);
+    }
+    
+    .stats {
+        grid-column: span 3 / span 3;
+        margin: 0 ;
+        width: 100%;
+        height: 515px;
+        min-width: 830px;
+        background-color: #38ce1a00;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap:25px ;
+    }
+
+    .card-icon {
+        top: -12px;
+        right: 15px;
+    }
+
+    .sport img{
+        top: 0px;
+    }
+
+    .emails img{
+        top: 2px;
+    }
+
+    .health img{
+        top: -10px;
+    }
+
+    .card{
+        @include borderRadius(16px);
+    }
+    
+    .card-body {
+        height: 200px;
+        padding: 10px 30px;
+        border-radius: 18px 18px 2px 2px;
+        -webkit-border-radius: 18px 18px 2px 2px;
+        -moz-border-radius: 18px 18px 2px 2px;
+        -ms-border-radius: 18px 18px 2px 2px;
+        -o-border-radius: 18px 18px 2px 2px;
+    }
+    
+    .card-title h3 {
+        @include textStyle(16px, 400, white);
+    }
+
+    .card-details {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+    }
+    
+    .card-details h4 {
+        display: flex;
+        align-items: center;
+        justify-content:start;
+        margin-left: 3px;
+        gap: 0 14px;
+        width: 100%;
+        @include textStyle(50px, 300, white);
+    }
+    
+    .card-details h4 span {
+        @include textStyle(22px, 300, rgba(255, 255, 255, 0.894));
+    }
+    
+    .card-details p {
+        @include textStyle(15px, 400, $neutral-lightBlue)
+    }
+
+    .card-details p span{
+        display: inline;
+    }
+    
+}
