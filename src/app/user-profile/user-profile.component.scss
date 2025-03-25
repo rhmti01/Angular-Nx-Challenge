@@ -1,0 +1,225 @@
+@import '../../styles/base/_reset';
+@import '../../styles/base/_mixins';
+@import '../../styles/base/_variables';
+
+
+
+.user-profile {
+    height: auto;
+    margin: 4rem auto 0 auto;
+    background-color: $neutral-darkBlue;
+    width: calc(100% - 45px);
+    max-width: 400px;
+    height: 205px;
+    display: flex;
+    flex-direction: column;
+    @include borderRadius(1.1rem)
+}
+
+.profile-card{
+    @include borderRadius(1.1rem);
+    background-color: $primary-blue;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 0 15px;
+    padding: 1.8rem 0 1.8rem 12%;
+}
+
+.profile-photo {
+    width: 70px;
+    @include borderRadius(100%);
+    border: 2.5px solid #fff;
+}
+
+.profile-title p {
+    @include textStyle (16px, 300, white)
+}
+
+.profile-title h2 {
+    margin-top: 1px;
+    @include textStyle(20px, 300, white);
+}
+
+.date-render {
+    display: flex;
+    margin-top: 4px;
+
+    ul {
+        height: 65px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+}
+
+.date-render ul li {
+    @include textStyle(16px, 400, $neutral-lightBlue);
+    cursor: pointer;
+    transition-duration: 400ms;
+}
+
+.date-render ul li:hover{
+    color: #fff;
+}
+
+
+
+
+
+
+
+// @media (min-width:450px)
+@include media(T) {
+
+    .user-profile {
+        max-width: 600px;
+        height: 220px;
+    }
+
+    .profile-card{
+        gap: 0 20px;
+        padding: 1.8rem 0 1.8rem 20%;
+    }
+
+    .profile-photo {
+        width: 85px;
+    }
+
+    .profile-title h2 {
+        margin-top: 2.5px;
+        @include textStyle(23px, 300, white);
+    }
+
+    .profile-title p {
+        @include textStyle (17px, 300, white)
+    }
+
+    .date-render {
+        margin-top: 3px;
+
+        ul {
+            height: 80px;
+        }
+    }
+
+    .date-render ul li {
+        @include textStyle(17px, 400, $neutral-lightBlue);
+    }
+
+}
+
+
+
+
+
+
+
+// @media (min-width:800px) and (max-width:1100px)
+@include media(I) {
+
+    .user-profile {
+        max-width: 500px;
+        height: 200px;
+    }
+
+    .profile-card{
+        gap: 0 20px;
+        padding: 1.6rem 0 1.6rem 20%;
+    }
+
+    .profile-photo {
+        width: 80px;
+    }
+
+    .profile-title h2 {
+        margin-top: 1.5px;
+        @include textStyle(23px, 300, white);
+    }
+
+    .profile-title p {
+        @include textStyle (17px, 300, white)
+    }
+
+    .date-render {
+        margin-top: -4px;
+
+        ul {
+            height: 80px;
+        }
+    }
+
+    .date-render ul li {
+        @include textStyle(17px, 400, $neutral-lightBlue);
+    }
+
+}
+
+
+
+
+
+
+
+// @media (min-width:1100px)
+@include media(D) {
+
+    .user-profile{
+        height: 515px;
+        width: 250px;
+        margin: 0;
+    }
+
+    .profile-card{
+        @include borderRadius(1.1rem);
+        background-color: $primary-blue;
+        display: flex;
+        justify-content: start;
+        flex-direction: column;
+        align-items: start;
+        gap: 20px 0;
+        padding: 0 0 0 12%;
+        height: 360px;
+        width: 100%;
+    }
+    
+    .card{
+        height: 100%;
+        width: 100%;
+    }
+    
+    .profile-photo {
+        margin-top: 35px;
+        width: 80px;
+    }
+    
+    .profile-title h2 {
+        margin-top: 17px;
+        line-height: 45px;
+        @include textStyle(39px, 300, white);
+    }
+    
+    .profile-title p {
+        @include textStyle (15px, 300, white)
+    }
+    
+    .date-render {
+        margin-top: 14px;
+        
+        ul {
+            padding: 10px 34px;
+            height: 130px;
+            align-items: start;
+            flex-direction: column;
+            justify-content: space-around
+        }
+    }
+    
+    .date-render ul li {
+        margin-top: 0;
+        padding: 0;
+        @include textStyle(17px, 400, $neutral-lightBlue);
+    }
+    
+}

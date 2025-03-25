@@ -1,0 +1,261 @@
+@import '../../styles/base/_reset';
+@import '../../styles/base/_mixins';
+@import '../../styles/base/_variables';
+
+
+.card {
+    @include borderRadius(14px);
+    height: 160px;
+    position: relative;
+    overflow: hidden;
+}
+
+.job {
+    @include card($primary-lightRed);
+}
+
+.fun {
+    @include card($primary-softBlue);
+}
+
+.learning {
+    @include card($primary-midRed);
+}
+
+.sport {
+    @include card($primary-limeGreen);
+}
+
+.emails {
+    @include card($primary-violet);
+}
+
+.health {
+    @include card($primary-softOrange);
+}
+
+.card-icon {
+    position: absolute;
+    right: 15px;
+    top: -5px;
+}
+
+.card-body {
+    background-color: $neutral-violetBlue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 120px;
+    width: 101%;
+    padding: 40px 30px;
+    position: absolute;
+    bottom: -0.5px;
+    left: -0.5px;
+    right: -0.5px;
+    border-radius: 18px 18px 2px 2px;
+    -webkit-border-radius: 18px 18px 2px 2px;
+    -moz-border-radius: 18px 18px 2px 2px;
+    -ms-border-radius: 18px 18px 2px 2px;
+    -o-border-radius: 18px 18px 2px 2px;
+    transition-duration: 300ms;
+}
+
+.card-body:hover{
+    background-color: $hover-cardBody;
+    cursor: pointer;
+}
+
+.card-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-title h3 {
+    @include textStyle(18px, 400, white);
+}
+
+.card-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.card-details h4 {
+    @include textStyle(32px, 300, white);
+}
+
+.card-details h4 span {
+    @include textStyle(18px, 300, rgba(255, 255, 255, 0.894));
+}
+
+.card-details p {
+    margin-bottom: 8px;
+    @include textStyle(14px, 400, $neutral-lightBlue)
+}
+
+.card-details p span{
+    display: none;
+}
+
+
+
+
+
+
+
+// @media (min-width:450px)
+@include media(T) {
+
+    .card {
+        height: 180px;
+    }
+
+    .card-icon {
+        top: -3px;
+        right: 22px;
+    }
+
+    .card-body {
+        height: 135px;
+        padding: 30px 40px;
+    }
+
+    .card-title h3 {
+        @include textStyle(19px, 400, white);
+    }
+
+    .card-details h4 {
+        @include textStyle(33px, 300, white);
+    }
+
+    .card-details h4 span {
+        @include textStyle(19px, 300, rgba(255, 255, 255, 0.894));
+    }
+
+    .card-details p {
+        @include textStyle(15px, 400, $neutral-lightBlue)
+    }
+}
+
+
+
+
+
+
+
+// @media (min-width:800px) and (max-width:1100px)
+@include media(I) {
+
+    .card {
+        height: 180px;
+    }
+
+    .card-icon {
+        top: -3px;
+        right: 22px;
+    }
+
+    .card-body {
+        height: 135px;
+        padding: 30px 40px;
+    }
+
+    .card-title h3 {
+        @include textStyle(19px, 400, white);
+    }
+
+    .card-details h4 {
+        @include textStyle(33px, 300, white);
+    }
+
+    .card-details h4 span {
+        @include textStyle(19px, 300, rgba(255, 255, 255, 0.894));
+    }
+
+    .card-details p {
+        @include textStyle(15px, 400, $neutral-lightBlue)
+    }
+}
+
+
+
+
+
+
+
+
+// @media (min-width:1100px)
+@include media(D) {
+    
+    .card{
+        height: 100%;
+        width: 100%;
+    }
+    
+    .card-icon {
+        top: -12px;
+        right: 15px;
+    }
+
+    .sport img{
+        top: 0px;
+    }
+
+    .emails img{
+        top: 2px;
+    }
+
+    .health img{
+        top: -10px;
+    }
+
+    .card{
+        @include borderRadius(16px);
+    }
+    
+    .card-body {
+        height: 200px;
+        padding: 10px 30px;
+        border-radius: 18px 18px 2px 2px;
+        -webkit-border-radius: 18px 18px 2px 2px;
+        -moz-border-radius: 18px 18px 2px 2px;
+        -ms-border-radius: 18px 18px 2px 2px;
+        -o-border-radius: 18px 18px 2px 2px;
+    }
+    
+    .card-title h3 {
+        @include textStyle(16px, 400, white);
+    }
+
+    .card-details {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+    }
+    
+    .card-details h4 {
+        display: flex;
+        align-items: center;
+        justify-content:start;
+        margin-left: 3px;
+        gap: 0 14px;
+        width: 100%;
+        @include textStyle(50px, 300, white);
+    }
+    
+    .card-details h4 span {
+        @include textStyle(22px, 300, rgba(255, 255, 255, 0.894));
+    }
+    
+    .card-details p {
+        @include textStyle(15px, 400, $neutral-lightBlue)
+    }
+
+    .card-details p span{
+        display: inline;
+    }
+    
+}

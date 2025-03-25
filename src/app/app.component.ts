@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
+import { UserProfileComponent } from "./user-profile/user-profile.component";
+import { CardComponent } from "./card/card.component";
+import { statsCards } from "./statscards";
 
 
 @Component({
-  imports: [],
+  imports: [UserProfileComponent, CardComponent],
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: '.././styles/components/app.scss',
+  styleUrl: './app.componenet.scss',
 })
 export class AppComponent {
-  
+  cardsData = statsCards;
 }
