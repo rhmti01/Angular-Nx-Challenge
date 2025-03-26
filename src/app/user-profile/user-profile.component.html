@@ -8,9 +8,15 @@
     </div>
     <div class="date-render">
         <ul>
-            <button (click)="onSelectDataType()" ><li>Daily</li></button>
-            <button (click)="onSelectDataType()" ><li >Weekly</li></button>
-            <button (click)="onSelectDataType()" ><li>Monthly</li></button>
+            <button (click)="onSelectDataType('daily')" [ngClass]="{'active' : isSelected('daily')}">
+                <li>Daily</li>
+            </button>
+            <button (click)="onSelectDataType('weekly')" [ngClass]="{'active': isSelected('weekly')}">
+                <li>Weekly</li>
+            </button>
+            <button (click)="onSelectDataType('monthly')" [ngClass]="{'active': isSelected('monthly')}">
+                <li>Monthly</li>
+            </button>
         </ul>
     </div>
 </div>

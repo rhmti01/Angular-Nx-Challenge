@@ -10,4 +10,12 @@ import { type card } from './card.model';
 })
 export class CardComponent {
   @Input({ required: true }) card!: card;
+  @Input() timeType!: string; 
+
+  getFormattedTimeType(): string {
+    if (this.timeType === 'weekly') return 'Week';
+    if (this.timeType === 'monthly') return 'Month';
+    if (this.timeType === 'daily') return 'Day';
+    return this.timeType;
+  }
 }

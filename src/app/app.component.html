@@ -1,8 +1,8 @@
 <div class="dashboard">
-    <app-user-profile />
+    <app-user-profile   [selectedType]="selectedTimeType()"  (selectedDataType)="updateTimeframe($event)"></app-user-profile>
     <div class="stats">
-        @for (card of cardsData ; track card.id) {
-        <app-card [card]="card" />
+        @for (card of cardsData; track card.id) {
+        <app-card [card]="card" [timeType]="selectedTimeType()" />
         }
     </div>
 </div>
