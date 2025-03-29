@@ -1,9 +1,18 @@
-import { Component, signal } from '@angular/core';
-import { UserProfileComponent } from './user-profile/user-profile.component';
-import { CardComponent } from './card/card.component';
-import { statsCards } from './statscards';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { Component, signal, computed } from '@angular/core'; 
+import { UserProfileComponent } from './user-profile/user-profile.component'; 
+import { CardComponent } from './card/card.component'; 
+import { statsCards } from './statscards'; 
 import { timeframes } from './timeframes';
 
+
+/**
+ * Defining base app component
+ *
+ * @export
+ * @class AppComponent
+ * @typedef {AppComponent}
+ */
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -12,10 +21,18 @@ import { timeframes } from './timeframes';
   styleUrls: ['./app.componenet.scss'],
 })
 export class AppComponent {
-  timeTypes = ['daily', 'weekly', 'monthly'];
+  /** Available time types for the cards. */
+  timeTypes = signal(['daily', 'weekly', 'monthly']).asReadonly();
+
+  /** The currently selected time type. */
   selectedTimeType = signal<'daily' | 'weekly' | 'monthly'>('weekly');
 
-  get cardsData() {
+  /**
+   * Computes the cards data based on the selected time type using computed signals.
+   *
+   * @type {*}
+   */
+  cardsData: any = computed(() => {
     const timeKey = this.selectedTimeType(); 
 
     return statsCards.map((card) => {
@@ -27,11 +44,14 @@ export class AppComponent {
         previous: timeData?.previous || 0,
       };
     });
-  }
+  });
 
+  /**
+   * Updates the selected time type
+   *
+   * @param {string} selectedType 
+   */
   updateTimeframe(selectedType: string) {
-    if (selectedType === 'daily' || selectedType === 'weekly' || selectedType === 'monthly') {
-      this.selectedTimeType.set(selectedType);
-    }
+      this.selectedTimeType.set(selectedType as 'daily' | 'weekly' | 'monthly');
   }
 }
